@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Listado de Materias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div th:replace="~{layouts/header :: header}"></div>
+    <div class="container mt-5">
+        <h2>Listado de Materias</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Curso</th>
+                    <th>Cantidad de Horas</th>
+					<th>Modalidad</th>
+					<th>Docente</th>
+					<th>Carrera</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="materia : ${materias}">
+                    <td th:text="${materia.codigo}"></td>
+                    <td th:text="${materia.nombre}"></td>
+                    <td th:text="${materia.curso}"></td>
+                    <td th:text="${materia.cantidadHoras}"></td>
+					<td th:text="${materia.modalidad}"></td>
+					<td th:text="${materia.docente.nombre}"></td> 
+					<td th:text="${materia.carrera.nombre}"></td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="~{layouts/footer :: footer}"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
