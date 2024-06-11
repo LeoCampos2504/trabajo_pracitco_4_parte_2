@@ -9,27 +9,29 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <h2>Listado de Carreras</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Legajo</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Email</th>
-					<th>Telefono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="docente : ${docentes}">
-                    <td th:text="${docente.legajo}"></td>
-                    <td th:text="${docente.nombre}"></td>
-                    <td th:text="${docente.apellido}"></td>
-                    <td th:text="${docente.email}"></td>
-					<td th:text="${docente.telefono}"></td>
-                </tr>
-            </tbody>
-        </table>
+        <h2 class="mb-4">Listado de Carreras</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark"> <!-- Encabezado de la tabla con fondo oscuro -->
+                    <tr>
+                        <th>Legajo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="docente : ${docentes}">
+                        <td th:text="${docente.legajo}"></td>
+                        <td th:text="${docente.nombre}"></td>
+                        <td th:text="${docente.apellido}"></td>
+                        <td th:text="${docente.email}"></td>
+                        <td th:text="${docente.telefono}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
     

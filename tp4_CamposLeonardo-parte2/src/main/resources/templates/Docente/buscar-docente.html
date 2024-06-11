@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Buscar Docente</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo */
+        }
+        .container {
+            background-color: #ffffff; /* Color de fondo del contenedor */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            padding: 20px; /* Espaciado interno */
+            margin-top: 50px; /* Espaciado superior */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Color de fondo del botón */
+            border-color: #007bff; /* Color del borde del botón */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+            border-color: #0056b3; /* Color del borde del botón al pasar el ratón */
+        }
+    </style>
 </head>
 <body>
-    <div th:replace="~{layouts/header :: header}"></div>
+	<div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
+        <h2 class="text-center mb-4">Buscar Docente</h2> <!-- Título centrado -->
         <form th:action="@{/docentes/modificar}" method="get">
             <div class="form-group">
                 <label for="codigo">Legajo de Docente:</label>
                 <input type="text" class="form-control" id="codigo" name="codigo" required>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit" class="btn btn-primary btn-block">Buscar</button> <!-- Botón de ancho completo -->
         </form>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
