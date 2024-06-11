@@ -9,14 +9,24 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <h1>Buscar Alumno para Eliminar</h1>
-        <form th:action="@{/alumnos/eliminar}" method="get">
-            <div class="form-group">
-                <label for="dni">DNI:</label>
-                <input type="text" class="form-control" id="dni" name="dni" required>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Buscar Alumno para Eliminar</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/alumnos/eliminar}" method="get">
+                            <div class="form-group">
+                                <label for="dni">DNI:</label>
+                                <input type="text" class="form-control" id="dni" name="dni" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Buscar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </form>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
 

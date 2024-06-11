@@ -9,14 +9,24 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <h2>Eliminar Alumno</h2>
-        <form th:action="@{/alumnos/eliminar}" method="post">
-            <div class="form-group">
-                <label for="dni">DNI del Alumno:</label>
-                <input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese el DNI">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Eliminar Alumno</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/alumnos/eliminar}" method="post">
+                            <div class="form-group">
+                                <label for="dni">DNI del Alumno:</label>
+                                <input type="text" class="form-control" id="dni" name="dni" placeholder="Ingrese el DNI" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
-        </form>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
 
