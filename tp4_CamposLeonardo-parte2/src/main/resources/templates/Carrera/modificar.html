@@ -9,25 +9,36 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <form th:action="@{/carreras/modificar}" th:object="${carrera}" method="post">
-            <div class="form-group">
-                <label for="codigo">Código:</label>
-                <input type="text" class="form-control" id="codigo" th:field="*{codigo}" name="codigo" readonly>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Modificar Carrera</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/carreras/modificar}" th:object="${carrera}" method="post">
+                            <div class="form-group">
+                                <label for="codigo">Código:</label>
+                                <input type="text" class="form-control" id="codigo" th:field="*{codigo}" name="codigo" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidadAnios">Cantidad de Años:</label>
+                                <input type="number" class="form-control" id="cantidadAnios" th:field="*{cantidadAnios}" name="cantidadAnios">
+                            </div>
+                            <div class="form-group">
+                                <label for="estado">Estado:</label>
+                                <input type="text" class="form-control" id="estado" th:field="*{estado}" name="estado">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
-            </div>
-            <div class="form-group">
-                <label for="cantidadAnios">Cantidad de Años:</label>
-                <input type="number" class="form-control" id="cantidadAnios" th:field="*{cantidadAnios}" name="cantidadAnios">
-            </div>
-            <div class="form-group">
-                <label for="estado">Estado:</label>
-                <input type="text" class="form-control" id="estado" th:field="*{estado}" name="estado">
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        </form>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
 
@@ -36,4 +47,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 

@@ -9,13 +9,24 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <form th:action="@{/carreras/baja}" method="post">
-            <div class="form-group">
-                <label for="codigo">Código de la Carrera:</label>
-                <input type="text" class="form-control" id="codigo" name="codigo" required>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">Eliminar Carrera</h4>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/carreras/baja}" method="post">
+                            <div class="form-group">
+                                <label for="codigo">Código de la Carrera:</label>
+                                <input type="text" class="form-control" id="codigo" name="codigo" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
-        </form>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
 
@@ -24,4 +35,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 

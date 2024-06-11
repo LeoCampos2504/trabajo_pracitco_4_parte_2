@@ -9,26 +9,28 @@
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
-        <h2>Listado de Carreras</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Cantidad de Años</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Iterar sobre las carreras y mostrar cada una en una fila de la tabla -->
-                <tr th:each="carrera : ${carreras}">
-                    <td th:text="${carrera.codigo}"></td>
-                    <td th:text="${carrera.nombre}"></td>
-                    <td th:text="${carrera.cantidadAnios}"></td>
-                    <td th:text="${carrera.estado}"></td>
-                </tr>
-            </tbody>
-        </table>
+        <h2 class="text-center mb-4">Listado de Carreras</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center">Código</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Cantidad de Años</th>
+                        <th class="text-center">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterar sobre las carreras y mostrar cada una en una fila de la tabla -->
+                    <tr th:each="carrera : ${carreras}">
+                        <td th:text="${carrera.codigo}" class="text-center"></td>
+                        <td th:text="${carrera.nombre}" class="text-center"></td>
+                        <td th:text="${carrera.cantidadAnios}" class="text-center"></td>
+                        <td th:text="${carrera.estado}" class="text-center"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
     
@@ -37,3 +39,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
