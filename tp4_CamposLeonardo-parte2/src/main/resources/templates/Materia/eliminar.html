@@ -10,11 +10,17 @@
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
         <form th:action="@{/materias/baja}" method="post">
-            <div class="form-group">
-                <label for="codigo">Codigo de la Materia:</label>
-                <input type="text" class="form-control" id="codigo" name="codigo" required>
+            <div class="form-group row">
+                <label for="codigo" class="col-sm-3 col-form-label">Código de la Materia:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="codigo" name="codigo" required>
+                </div>
             </div>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
         </form>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>

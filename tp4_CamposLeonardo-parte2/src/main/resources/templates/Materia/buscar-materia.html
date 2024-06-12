@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Buscar Materia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* Estilo personalizado para el formulario */
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div th:replace="~{layouts/header :: header}"></div>
     <div class="container mt-5">
         <form th:action="@{/materias/modificar}" method="get">
-            <div class="form-group">
-                <label for="codigo">codigo de la materia:</label>
-                <input type="text" class="form-control" id="codigo" name="codigo" required>
+            <div class="form-group row">
+                <label for="codigo" class="col-sm-3 col-form-label">Código de la materia:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="codigo" name="codigo" required>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit" class="btn btn-primary btn-block">Buscar</button>
+                </div>
+            </div>
         </form>
     </div>
     <div th:replace="~{layouts/footer :: footer}"></div>
