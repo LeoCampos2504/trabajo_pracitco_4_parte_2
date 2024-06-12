@@ -5,34 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>UNJU</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <style>
+        /* Estilo personalizado */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+        }
+        aside {
+            width: 250px;
+            order: 2;
+        }
+        main {
+            flex-grow: 1;
+            order: 1;
+        }
+    </style>
 </head>
 
 <body>
-	<div th:replace="~{layouts/header :: header}"></div>	
-	   <!-- Barra lateral -->
-		    <aside class="bg-light p-3">
-		        <h4>Menú</h4>
-		        <ul class="list-unstyled">
-		            <li><a href="#">Biblioteca</a></li>
-		            <li><a href="#">Calendario académico</a></li>
-		        </ul>
-		    </aside>
-		
-		    <!-- Sección de contenido principal -->
-		    <main class="container mt-4">
-		        <section>
-		            <h2>Bienvenidos a la Facultad de Jujuy</h2>
-		            <p>Ofrecemos una educación de excelencia en diversas áreas del conocimiento.</p>
-		        </section>
-		        <section>
-		            <h2>Noticias recientes</h2>
-		            <!-- Agrega aquí las noticias -->
-		        </section>
-		    </main>
-	<div th:replace="~{layouts/footer :: footer}"></div>
+    <div th:replace="~{layouts/header :: header}"></div>    
+    <div class="content">
+        <!-- Barra lateral -->
+        <aside class="bg-light p-3">
+            <h4>Menú</h4>
+            <ul class="list-unstyled">
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Calendario académico</a></li>
+                <!-- Agrega enlaces reales -->
+            </ul>
+        </aside>
+        
+        <!-- Sección de contenido principal -->
+        <main class="container mt-4">
+            <section>
+                <h2>Bienvenidos a la Facultad de Jujuy</h2>
+                <p>Ofrecemos una educación de excelencia en diversas áreas del conocimiento.</p>
+            </section>
+            <section>
+                <h2>Noticias recientes</h2>
+                <!-- Agrega noticias reales -->
+            </section>
+        </main>
+    </div>
+    <div th:replace="~{layouts/footer :: footer}"></div>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
