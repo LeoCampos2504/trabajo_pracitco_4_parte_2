@@ -5,27 +5,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <nav th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.html">Registro Unju</a>
-        <div class="collapse navbar-collapse">
+    <nav th:fragment="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" th:href="@{/index/inicio}">Registro Unju</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-				        Alumno
-				    </a>
-				    <div class="dropdown-menu">
-				        <a class="dropdown-item" th:href="@{/alumnos/alta}">Alta</a>
-				        <a class="dropdown-item" th:href="@{/alumnos/listar}">Listar</a>
-				        <a class="dropdown-item" th:href="@{/alumnos/buscar-modificar}">Buscar/Modificar</a>
-				        <a class="dropdown-item" th:href="@{/alumnos/eliminar}">Eliminar</a>
-				    </div>
-				</li>
-
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Alumno
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" th:href="@{/alumnos/alta}">Alta</a>
+                        <a class="dropdown-item" th:href="@{/alumnos/listar}">Listar</a>
+                        <a class="dropdown-item" th:href="@{/alumnos/buscar-modificar}">Buscar/Modificar</a>
+                        <a class="dropdown-item" th:href="@{/alumnos/eliminar}">Eliminar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Materia
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" th:href="@{/materias/alta}">Alta</a>
                         <a class="dropdown-item" th:href="@{/materias/listar}">Listar</a>
                         <a class="dropdown-item" th:href="@{/materias/buscar}">Buscar/Modificar</a>
@@ -33,10 +35,10 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Docente
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" th:href="@{/docentes/alta}">Alta</a>
                         <a class="dropdown-item" th:href="@{/docentes/listar}">Listar</a>
                         <a class="dropdown-item" th:href="@{/docentes/buscar}">Buscar/Modificar</a>
@@ -44,10 +46,10 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Carrera
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" th:href="@{/carreras/alta}">Alta</a>
                         <a class="dropdown-item" th:href="@{/carreras/listar}">Listar</a>
                         <a class="dropdown-item" th:href="@{/carreras/buscar}">Buscar/Modificar</a>
@@ -59,4 +61,5 @@
     </nav>
 </body>
 </html>
+
 
